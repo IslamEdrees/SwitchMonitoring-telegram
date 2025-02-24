@@ -68,11 +68,11 @@ check_switch() {
             MESSAGE="⚠️ Trunk change detected on Switch: $SWITCH_IP"
 
             if [[ -n "$REMOVED_PORTS" ]]; then
-                MESSAGE+="\n⛔️ Ports DOWN:\n$REMOVED_PORTS"
+                MESSAGE+="⛔️ Ports DOWN:$REMOVED_PORTS"
             fi
 
             if [[ -n "$ADDED_PORTS" ]]; then
-                MESSAGE+="\n✅ Ports UP:\n$ADDED_PORTS"
+                MESSAGE+="✅ Ports UP:$ADDED_PORTS"
             fi
 
             echo "$MESSAGE" | tee -a "$LOG_FILE"
